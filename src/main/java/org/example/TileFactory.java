@@ -10,14 +10,14 @@ import java.util.Map;
  *  Only creates new instances of TileType when the state given is unique
  */
 public class TileFactory {
-    static Map<String, TileType> treeTypes = new HashMap<>();
+    static Map<String, TileType> tileTypes = new HashMap<>();
 
-    public static TileType getTreeType(String name, Color color, String otherData) {
-        TileType result = treeTypes.get(name);
+    public static TileType getTileType(String name, Color color, String otherData) {
+        TileType result = tileTypes.get(name);
         if(result == null) {
-            System.out.println("Registered new tile type with name: " + name + ", and color: " + color.toString());
+            System.out.println("Registered new tile type with name:\n" + name + ", and color: " + color.toString());
             result = new TileType(name, color, otherData);
-            treeTypes.put(name, result);
+            tileTypes.put(name, result);
         }
         return result;
     }
